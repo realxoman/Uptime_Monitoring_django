@@ -1,1 +1,1 @@
-# Uptime Monitoring
+# Uptime Monitoring Django
