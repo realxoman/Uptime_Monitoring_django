@@ -10,7 +10,7 @@ class DomainChecker:
         self.domain = domain
         
     def send_request(self) -> object:
-        self.request = requests.get(self.domain)
+        self.request = requests.head(self.domain)
         return self.request
     
     
