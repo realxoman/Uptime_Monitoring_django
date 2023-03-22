@@ -30,5 +30,21 @@ class CurlUptime:
     def get_total(self):
         return self.getinfo(self.curl_session.TOTAL_TIME)
 
+    def get_full_dict(self) -> dict:
+        final_dictionary = dict()
+        final_dictionary.update({
+            'status_code': self.get_status(),
+            'dns_lookup': self.get_dns_lookup(),
+            'tcp': self.get_tcp(),
+            'ssl_tls': self.get_ssl_tls(),
+            'ttfb': self.get_ttfb(),
+            'data_transfer': self.get_data_transfer(),
+            'total': self.get_total()
+        })
+        self.close_session()
+        return final_dictionary
+        
+
     def close_session(self):
         self.curl_session.close()
+
