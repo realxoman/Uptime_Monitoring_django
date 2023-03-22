@@ -29,8 +29,8 @@ class TestCurl(unittest.TestCase):
     def test_total(self):
         self.assertGreaterEqual(self.curl.get_total(), 0)
 
-    def test_full_dict(self):
-        self.assertIs(type(self.curl.get_full_dict()), type(dict))
+    def test_metrics(self):
+        self.assertIs(type(self.curl.get_metrics()), type(dict))
 
 class TestStatusChecker(unittest.TestCase):
     
